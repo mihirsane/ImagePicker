@@ -64,22 +64,20 @@ public class PickerBottomLayout extends FrameLayout {
       send.setEnabled(false);
       send.setVisibility(View.GONE);
       send.setText(getResources().getString(pickTextRes));
-      originalContainer.setVisibility(View.GONE);
     } else {
       send.setTextColor(getResources().getColor(R.color.color_48baf3));
       send.setEnabled(true);
       send.setText(getResources().getString(pickTextRes) + " "
           + getResources().getString(R.string.bracket_num, count));
-      originalContainer.setVisibility(View.GONE);
+
     }
   }
 
   public void updateSelectedSize(String size) {
     if (TextUtils.isEmpty(size)) {
-      originalContainer.setVisibility(View.GONE);
       originalCheckbox.setChecked(false);
     } else {
-      originalContainer.setVisibility(View.VISIBLE);
+
       originalSize.setText(getResources().getString(R.string.general_original) + " "
           + getResources().getString(R.string.bracket_str, size));
     }
