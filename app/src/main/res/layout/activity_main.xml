@@ -29,14 +29,14 @@
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:text="选择头像"/>
+                android:text="Choose Avatar"/>
 
             <Button
                 android:id="@+id/pick_image"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:text="选择多张照片"/>
+                android:text="Select multiple photos"/>
 
 
             <Button
@@ -44,14 +44,14 @@
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:text="选择多张照片带限制条件"/>
+                android:text="Select multiple photos with restrictions"/>
 
             <CheckBox
                 android:id="@+id/show_camera"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:text="添加相机选项"/>
+                android:text="Add camera options"/>
 
             <TextView
                 android:id="@+id/original"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
-                android:text="原图:"/>
+                android:text="Original image:"/>
 
             <com.imnjh.imagepickersample.widget.ExpandGridView
                 android:id="@+id/image_grid"
