@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="left|center_vertical"
         android:gravity="left"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <CheckBox
             android:id="@+id/original_checkbox"
