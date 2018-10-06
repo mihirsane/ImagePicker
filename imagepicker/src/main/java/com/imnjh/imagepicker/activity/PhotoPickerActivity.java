@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
 import android.support.v7.widget.AppCompatSpinner;
@@ -130,13 +131,18 @@ public class PhotoPickerActivity extends BasePickerActivity implements PickerAct
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+      if (Build.VERSION.SDK_INT == 26) {
+          setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+      } else {
+          setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+      }
     mode = getIntent().getIntExtra(PARAM_MODE, SImagePicker.MODE_IMAGE);
     maxCount = getIntent().getIntExtra(PARAM_MAX_COUNT, 1);
     avatarFilePath = getIntent().getStringExtra(CropImageActivity.PARAM_AVATAR_PATH);
     rowCount = getIntent().getIntExtra(PARAM_ROW_COUNT, 4);
     showCamera = getIntent().getBooleanExtra(PARAM_SHOW_CAMERA, false);
-    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-    initUI();
+
+      initUI();
   }
 
   private void initUI() {

@@ -41,8 +41,11 @@
     </style>
 
     <style name="AppTheme.Popup">
-        <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@style/AnimationStylePopup</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <style name="AppTheme.Picture">
@@ -53,6 +56,13 @@
 
     <style name="AnimationStylePopup">
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_bottom</item>
+    </style>
+
+    <style name="TranslucentActivity" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
 
