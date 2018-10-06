@@ -62,6 +62,7 @@ public class PickerBottomLayout extends FrameLayout {
     if (count == 0) {
       send.setTextColor(getResources().getColor(R.color.gray));
       send.setEnabled(false);
+      send.setVisibility(View.GONE);
       send.setText(getResources().getString(pickTextRes));
       originalContainer.setVisibility(View.GONE);
     } else {
