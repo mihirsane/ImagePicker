@@ -58,30 +58,31 @@ public class PickerBottomLayout extends FrameLayout {
     });
   }
 
-  public void updateSelectedCount(int count) {
-    if (count == 0) {
-      send.setTextColor(getResources().getColor(R.color.gray));
-      send.setEnabled(false);
-      send.setVisibility(View.GONE);
-      send.setText(getResources().getString(pickTextRes));
-    } else {
-      send.setTextColor(getResources().getColor(R.color.color_48baf3));
-      send.setEnabled(true);
-      send.setText(getResources().getString(pickTextRes) + " "
-          + getResources().getString(R.string.bracket_num, count));
-
+    public void updateSelectedCount(int count) {
+        if (count == 0) {
+            send.setTextColor(getResources().getColor(R.color.gray));
+            send.setEnabled(false);
+            send.setText(getResources().getString(pickTextRes));
+            originalContainer.setVisibility(View.GONE);
+        } else {
+            send.setTextColor(getResources().getColor(R.color.color_48baf3));
+            send.setEnabled(true);
+            send.setText(getResources().getString(pickTextRes) + " "
+                    + getResources().getString(R.string.bracket_num, count));
+            originalContainer.setVisibility(View.VISIBLE);
+        }
     }
-  }
 
-  public void updateSelectedSize(String size) {
-    if (TextUtils.isEmpty(size)) {
-      originalCheckbox.setChecked(false);
-    } else {
-
-      originalSize.setText(getResources().getString(R.string.general_original) + " "
-          + getResources().getString(R.string.bracket_str, size));
+    public void updateSelectedSize(String size) {
+        if (TextUtils.isEmpty(size)) {
+            originalContainer.setVisibility(View.GONE);
+            originalCheckbox.setChecked(false);
+        } else {
+            originalContainer.setVisibility(View.VISIBLE);
+            originalSize.setText(getResources().getString(R.string.general_original) + " "
+                    + getResources().getString(R.string.bracket_str, size));
+        }
     }
-  }
 
   public void hide() {
     animate().translationY(getHeight())
