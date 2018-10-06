@@ -70,7 +70,7 @@ public class PickerBottomLayout extends FrameLayout {
       send.setEnabled(true);
       send.setText(getResources().getString(pickTextRes) + " "
           + getResources().getString(R.string.bracket_num, count));
-      originalContainer.setVisibility(View.VISIBLE);
+      originalContainer.setVisibility(View.GONE);
     }
   }
 
