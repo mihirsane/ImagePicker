@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
@@ -134,6 +135,7 @@ public class PhotoPickerActivity extends BasePickerActivity implements PickerAct
     avatarFilePath = getIntent().getStringExtra(CropImageActivity.PARAM_AVATAR_PATH);
     rowCount = getIntent().getIntExtra(PARAM_ROW_COUNT, 4);
     showCamera = getIntent().getBooleanExtra(PARAM_SHOW_CAMERA, false);
+    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     initUI();
   }
 
