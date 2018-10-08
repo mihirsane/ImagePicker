@@ -43,7 +43,7 @@
     <style name="AppTheme.Popup">
         <item name="android:windowAnimationStyle">@style/AnimationStylePopup</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/white</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowNoTitle">true</item>
     </style>

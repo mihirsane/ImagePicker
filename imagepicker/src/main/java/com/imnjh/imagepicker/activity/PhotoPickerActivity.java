@@ -16,6 +16,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.imnjh.imagepicker.CapturePhotoHelper;
 import com.imnjh.imagepicker.FileChooseInterceptor;
@@ -130,6 +132,8 @@ public class PhotoPickerActivity extends BasePickerActivity implements PickerAct
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+    this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     super.onCreate(savedInstanceState);
       if (Build.VERSION.SDK_INT == 26) {
           setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
