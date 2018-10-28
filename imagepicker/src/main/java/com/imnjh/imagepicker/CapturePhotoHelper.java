@@ -86,11 +86,13 @@ public class CapturePhotoHelper {
       }
       if (DeviceCompat.getROM() == DeviceCompat.ROM.SONY) {
         Intent intent = new Intent();
-        intent.setClass(fragment.getActivity(), CaptureTempActivity.class);
-        intent.putExtra(CaptureTempActivity.CAPTURE_URI, uri);
         if (fragment != null) {
+          intent.setClass(fragment.getActivity(), CaptureTempActivity.class);
+          intent.putExtra(CaptureTempActivity.CAPTURE_URI, uri);
           fragment.startActivityForResult(intent, CAPTURE_PHOTO_REQUEST_CODE);
         } else if (activity != null) {
+          intent.setClass(activity, CaptureTempActivity.class);
+          intent.putExtra(CaptureTempActivity.CAPTURE_URI, uri);
           activity.startActivityForResult(intent, CAPTURE_PHOTO_REQUEST_CODE);
         }
       } else {
