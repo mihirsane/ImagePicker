@@ -104,25 +104,32 @@ public class PhotoPickerActivity extends BasePickerActivity implements PickerAct
         @Override
         public void onPreview(final int position, Photo photo, final View view) {
           if (mode == SImagePicker.MODE_IMAGE) {
-            photoController.getAllPhoto(new PhotoLoadListener() {
-              @Override
-              public void onLoadComplete(ArrayList<Uri> photoUris) {
-                if (!CollectionUtils.isEmpty(photoUris)) {
-                  PickerPreviewActivity.startPicturePreviewFromPicker(PhotoPickerActivity.this,
-                      photoUris, photoController.getSelectedPhoto(), position,
+              ArrayList<Uri> uris = new ArrayList<Uri>();
+              uris.add(photo.buildContentUri());
+
+              PickerPreviewActivity.startPicturePreviewFromPicker(PhotoPickerActivity.this,
+                      uris, new ArrayList<String>(), 0,
                       bottomLayout.originalCheckbox.isChecked(), maxCount, rowCount,
                       fileChooseInterceptor,
                       pickRes, pickNumRes,
                       PickerPreviewActivity.AnchorInfo.newInstance(view),
                       REQUEST_CODE_PICKER_PREVIEW);
-                }
-              }
 
-              @Override
-              public void onLoadError() {
 
-              }
-            });
+//            photoController.getAllPhoto(new PhotoLoadListener() {
+//              @Override
+//              public void onLoadComplete(ArrayList<Uri> photoUris) {
+//                if (!CollectionUtils.isEmpty(photoUris)) {
+//
+//                }
+//              }
+//
+//              @Override
+//              public void onLoadError() {
+//
+//              }
+//            });
+
           } else if (mode == SImagePicker.MODE_AVATAR) {
             CropImageActivity.startImageCrop(PhotoPickerActivity.this, photo.getFilePath(),
                 REQUEST_CODE_CROP_IMAGE, avatarFilePath);
